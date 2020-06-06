@@ -1,0 +1,239 @@
+<div style="padding: 5% 10%;">
+    <div style="padding-bottom: 2%;">
+        <button mat-icon-button aria-label="Dashboard">
+            <mat-icon style="color:#007bff" routerLink="/">home</mat-icon>
+        </button>
+        <mat-label style="font-size:18px;font-weight:550;margin-left:34%;color:#007bff">Registration for Migrants
+            Employment</mat-label>
+    </div>
+    <mat-grid-list cols="12" rowHeight="100px" gutterSize="0px">
+
+        <form class="my-form">
+            <mat-grid-tile [colspan]="4" [rowspan]="1">
+                <div class="move-left">
+                    <mat-form-field class="extend-element">
+                        <mat-label>First Name</mat-label>
+                        <input matInput placeholder="" [(ngModel)]="fname" name="fname" required />
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="4" [rowspan]="1">
+                <div class="move-left">
+                    <mat-form-field class="extend-element">
+                        <mat-label>Middle Name</mat-label>
+                        <input matInput placeholder="" [(ngModel)]="mname" name="mname">
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="4" [rowspan]="1">
+                <div class="move-left">
+                    <mat-form-field class="extend-element">
+                        <mat-label>Last Name</mat-label>
+                        <input matInput placeholder="" [(ngModel)]="lname" name="lname" required>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="4" [rowspan]="1">
+                <div class="move-left">
+                    <mat-form-field class="extend-element">
+                        <mat-label>Mobile Number</mat-label>
+                        <input matInput placeholder="+91" [(ngModel)]="mob" (keypress)="keyPress($event)" name="mob"
+                            minlength=10 maxlength=10 required>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="4" [rowspan]="1">
+                <div class="move-left">
+                    <mat-form-field class="extend-element">
+                        <mat-label>Alternate Mobile Number</mat-label>
+                        <input matInput placeholder="+91" [(ngModel)]="amob" (keypress)="keyPress($event)" name="amob"
+                            minlength=10 maxlength=10>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="4" [rowspan]="1"> </mat-grid-tile>
+
+
+            <mat-grid-tile [colspan]="4" [rowspan]="1">
+                <div style="padding-top: 6%;" class="move-left">
+                    <mat-label style="padding-top:1%;padding-right:4%;font-weight: 550;color:dimgray;">Gender :
+                    </mat-label>
+                    <mat-radio-group aria-labelledby="example-radio-group-label" class="" [(ngModel)]="gender"
+                        name="gender">
+                        <mat-radio-button class="example-radio-button" *ngFor="let c of genderVals" [value]="c">
+                            {{c}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="4" [rowspan]="1">
+                <div class="move-left">
+                    <mat-form-field class="extend-element">
+                        <mat-label>Date Of Birth</mat-label>
+                        <input matInput placeholder="(mm/dd/yyyy)" [(ngModel)]="dob" name="dob" required>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="4" [rowspan]="1"></mat-grid-tile>
+
+
+            <mat-grid-tile [colspan]="6" [rowspan]="1">
+                <div class="move-left">
+                    <mat-form-field appearance="fill" class="extend-element">
+                        <mat-label>Current Address</mat-label>
+                        <textarea matInput [(ngModel)]="address" name="address" placeholder="Please include Pincode"
+                            required></textarea>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="6" [rowspan]="1">
+                <div class="move-left">
+                    <mat-form-field appearance="fill" class="extend-element">
+                        <mat-label>Permanent Address</mat-label>
+                        <textarea matInput [(ngModel)]="paddress" name="paddress" placeholder="Please include Pincode"
+                            required></textarea>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="5" [rowspan]="1">
+                <div class="move-left">
+                    <mat-form-field class="extend-element">
+                        <mat-label>Aadhar Number</mat-label>
+                        <input matInput placeholder="" [(ngModel)]="anumber" name="anumber" maxlength=12 required>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile style="color:#007bff" [colspan]="4" [rowspan]="1">
+                *<a href="https://uidai.gov.in/my-aadhaar/about-your-aadhaar/aadhaar-enrolment.html">Visit Adhaar Enrollment to get Adhaar information!</a>
+                </mat-grid-tile>
+
+
+            <mat-grid-tile [colspan]="3" [rowspan]="1"></mat-grid-tile>
+
+            <mat-grid-tile [colspan]="4" [rowspan]="1">
+                <div style="padding-top: 6%;" class="move-left">
+                    <mat-label style="padding-top:1%;padding-right:4%;font-weight: 550;color:dimgray;">Employed :
+                    </mat-label>
+                    <mat-radio-group aria-labelledby="example-radio-group-label" class="" [(ngModel)]="employed"
+                        name="employed">
+                        <mat-radio-button class="example-radio-button" *ngFor="let c of choice" [value]="c">
+                            {{c}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="4" [rowspan]="1">
+                <div class="move-left">
+                    <mat-form-field class="extend-element">
+                        <mat-label>Skills Set</mat-label>
+                        <input matInput [(ngModel)]="SkillsSet" placeholder="Add 'Non-skilled' in case for general workers" name="SkillsSet" required>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="4" [rowspan]="1">
+                <div class="move-left">
+                    <mat-form-field class="extend-element">
+                        <mat-label>Work Experience</mat-label>
+                        <input matInput placeholder="" [(ngModel)]="workexperience" name="workexperience" required>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="4" [rowspan]="1">
+                <div class="move-left">
+                    <mat-form-field class="extend-element">
+                        <mat-label>Education</mat-label>
+                        <input matInput placeholder="" [(ngModel)]="Education" name="Education" required>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+
+
+            <mat-grid-tile [colspan]="4" [rowspan]="1">
+                <div class="move-left">
+                    <mat-form-field class="extend-element">
+                        <mat-label>Highest Education</mat-label>
+                        <input matInput placeholder="" [(ngModel)]="hedu" name="hedu">
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="4" [rowspan]="1"></mat-grid-tile>
+
+            <mat-grid-tile [colspan]="4" [rowspan]="1">
+                <div style="padding-top: 6%;" class="move-left">
+                    <mat-label style="padding-top:1%;padding-right:4%;font-weight: 550;color:dimgray;"> Daily waged
+                        employee: </mat-label>
+                    <mat-radio-group aria-labelledby="example-radio-group-label" class="" [(ngModel)]="dailywaged"
+                        name="dailywaged">
+                        <mat-radio-button class="example-radio-button" *ngFor="let c of choice" [value]="c">
+                            {{c}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="4" [rowspan]="1">
+                <div *ngIf="dailywaged==='No'" class="move-left">
+                    <mat-form-field class="extend-element">
+                        <div class="form-group" *ngIf="!isNameSelected">
+                            <mat-label>Current Organisation</mat-label>
+                            <input matInput [(ngModel)]="company" placeholder="" name="company">
+                        </div>
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+
+            <mat-grid-tile [colspan]="4" [rowspan]="1"></mat-grid-tile>
+            <mat-grid-tile [colspan]="4" [rowspan]="1">
+                <div style="padding-top: 6%;" class="move-left">
+                    <mat-label style="padding-top:1%;padding-right:4%;font-weight: 550;color:dimgray;">Willing to
+                        Relocate : </mat-label>
+                    <mat-radio-group aria-labelledby="example-radio-group-label" class="" [(ngModel)]="relocate"
+                        name="relocate">
+                        <mat-radio-button class="example-radio-button" *ngFor="let c of choice" [value]="c">
+                            {{c}}
+                        </mat-radio-button>
+                    </mat-radio-group>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="4" [rowspan]="1">
+                <div class="move-left">
+                    <mat-form-field class="extend-element">
+                        <mat-label>Family count</mat-label>
+                        <input matInput [(ngModel)]="Familycount" placeholder="" name="Familycount">
+                    </mat-form-field>
+                </div>
+            </mat-grid-tile>
+            <mat-grid-tile [colspan]="4" [rowspan]="1"></mat-grid-tile>
+        </form>
+
+        <mat-grid-tile [colspan]="4" [rowspan]="1"></mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+            <button class="btnWidth" color="primary" (click)="save()" mat-raised-button>Register</button>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="2" [rowspan]="1">
+            <button class="btnWidth" color="primary" (click)="onReset()" mat-raised-button>Cancel</button>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="4" [rowspan]="1"></mat-grid-tile>
+
+        <mat-grid-tile [colspan]="4" [rowspan]="1"></mat-grid-tile>
+        <mat-grid-tile [colspan]="4" [rowspan]="1">
+            <p style="color: red;">
+                {{error}}
+            </p>
+        </mat-grid-tile>
+        <mat-grid-tile [colspan]="4" [rowspan]="1"></mat-grid-tile>
+
+
+
+    </mat-grid-list>
+
+</div>

@@ -1,0 +1,25 @@
+<mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile>
+        <a href="/shramikForm">Migrant Labor Force Employment Form</a>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <a href="/shramikDetail">Migrant Labor Information </a>
+    </mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>
+<mat-grid-list cols="2" rowHeight="2:1">
+    <mat-grid-tile>
+        <div style="display: block">
+            <canvas id="bar" baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+                [legend]="barChartLegend" [chartType]="barChartType">
+            </canvas>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile>
+        <div style="display: block">
+            <canvas id="donut" baseChart [data]="doughnutChartData" [labels]="doughnutChartLabels"
+                [chartType]="doughnutChartType"></canvas>
+        </div>
+    </mat-grid-tile>
+</mat-grid-list>

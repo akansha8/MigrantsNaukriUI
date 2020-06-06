@@ -1,0 +1,52 @@
+<div style="padding: 5% 10%;">
+    <div style="padding-bottom: 2%;">
+        <button mat-icon-button aria-label="Dashboard">
+            <mat-icon style="color:#007bff" routerLink="/">home</mat-icon>
+        </button>
+        <mat-label style="font-size:18px;font-weight:550;margin-left:40%;color:#007bff">Migrants
+            Information</mat-label>
+    </div>
+    <div>
+        <div>
+            <mat-form-field style="width: 400px;">
+                <mat-label style="font-size:18px;font-weight:550;color:#007bff;">Please select Skill Set</mat-label>
+                <mat-select [(ngModel)]="headerLabel" (ngModelChange)="searchProduct()">
+                    <mat-option *ngFor="let prod of ProductHeader" [value]="prod">
+                        {{prod}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div *ngIf="headerLabel" class="example" #TABLE>
+            <table id="ExampleMaterialTable" class="TFtable" #table>
+                <tr>
+                    <th class="head">Name</th>
+                    <th class="head">Mobile Number</th>
+                    <th class="head" style="width: 250px;">Current Address</th>
+                    <th class="head"> Gender</th>
+                    <th class="head"> Highest Education</th>
+                    <th class="head"> Employed</th>
+                    <th class="head"> WorkExperience</th>
+                    <th class="head"> Relocate</th>
+                </tr>
+                <tr *ngFor="let Prod of ProductDetails">
+                    <td>{{Prod.firstName + " " + Prod.lastName}}</td>
+                    <td>{{Prod.mobNum}}</td>
+                    <td style="width: 250px;">{{Prod.cAddress}}</td>
+                    <td>{{Prod.gender}}</td>
+                    <td>{{Prod.hedu}}</td>
+                    <td>{{Prod.employed}}</td>
+                    <td>{{Prod.workexperience}}</td>
+                    <td>{{Prod.relocate}}</td>
+                </tr>
+            </table>
+
+            <div>
+                <button class="btnWidth" color="primary" mat-raised-button (click)="exportTable()">Export</button>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>

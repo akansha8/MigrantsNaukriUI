@@ -1,0 +1,24 @@
+.TFtable{
+    width: 100%;
+}
+table {
+    border-collapse: collapse;
+  }
+  table, th, td {
+    border: 1px solid black;
+  }
+  .head{
+    padding: 1%;
+    background-color: #007bff;
+    color:white;
+    font-weight: 550;
+  }
+  td{
+    padding: 1%;
+  }
+  .btnWidth{
+    margin-left: 48%;
+    margin-top: 5%;
+    background-color: #007bff;
+  }
+  
